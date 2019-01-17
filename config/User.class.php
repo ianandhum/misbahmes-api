@@ -118,11 +118,6 @@ class User{
 			if(((($userRow['userPass'] === md5($pass)) && $device==$this->deviceType)|| ($isAuto==true)) && $userRow['state']!="DISABLED") {
 							$this->selectUser($userRow['userId']);
 
-							//conflict added and not evaluated
-							/**
-							 * almost cleared
-							 */
-
 							if($this->getUserType()!="admin" && !$isAuto) {
 								$error= new ErrorMsg("EPERMISSION");
 								$this->lastError=$error->toString();
